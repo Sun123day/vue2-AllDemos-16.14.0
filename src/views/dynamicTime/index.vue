@@ -143,6 +143,9 @@ export default {
 }
 </script>
 <template>
+    <div>
+        <h1>动态结束时间</h1>
+        
     <el-form
         label-position="right"
         label-width="72px"
@@ -228,6 +231,7 @@ export default {
             </el-col>
         </el-row>
     </el-form>
+    </div>
 </template>
 
 <style lang="scss" scoped>
