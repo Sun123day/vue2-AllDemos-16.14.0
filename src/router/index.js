@@ -15,6 +15,11 @@ const routes = [
     redirect: '/layout01'
   },
   {
+    path: '/twoORone',
+    name: 'twoORone',
+    component: () => import('@/views/twoORone/index.vue')
+  },
+  {
     path: '/layout01',
     name: 'layout01',
     component: () => import('@/views/layoutDemo/index.vue')
