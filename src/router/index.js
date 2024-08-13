@@ -15,11 +15,6 @@ const routes = [
     redirect: '/layout01'
   },
   {
-    path: '/twoORone',
-    name: 'twoORone',
-    component: () => import('@/views/twoORone/index.vue')
-  },
-  {
     path: '/layout01',
     name: 'layout01',
     component: () => import('@/views/layoutDemo/index.vue')
@@ -28,6 +23,11 @@ const routes = [
     path: '/button01',
     name: 'button01',
     component: () => import('@/views/button01/index.vue')
+  },
+  {
+    path: '/drawer01',
+    name: 'drawer01',
+    component: () => import('@/views/drawer01/index.vue')
   },
   {
     path: '/test01',
