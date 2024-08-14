@@ -1,6 +1,6 @@
 <template>
   <div>
-      <button :class="`my-btn btn-${type}`"><slot></slot></button>
+      <el-button :class="`my-btn btn-${type}`"><slot></slot></el-button>
   </div>
 </template>
 <script>
@@ -9,7 +9,7 @@
         props: {
             type: {
               type: String,
-              default: "Button",
+              default: "primary1",
             },
         },
     }

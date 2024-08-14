@@ -1,13 +1,16 @@
-<!-- 封装抽屉应用 -->
+<!-- 初步封装抽屉应用 -->
 <template>
   <div>
-    <h1>封装抽屉测试</h1>
+    <h1>初步封装抽屉测试</h1>
     <div>
-      <SpeBtn type="primary1" @click="hanleClickBtn">点击展开抽屉</SpeBtn>
+      <SpeBtn>这不素抽屉</SpeBtn>
+      <el-button @click="hanleClickBtn" class="btn">点击展开抽屉</el-button>
       <DrawerTest 
         :task="taskFormData" 
-        :drawer="drawer" 
+        :drawer.sync="drawer" 
         :direction="direction"
+        :titleTxt="title"
+        @drawerClose="handleClose"
       />
     </div>
   </div>
@@ -23,22 +26,27 @@ components:{
 },
 data(){
   return {
-    taskData: [],// 任务数据
     drawer: false,
     direction: 'rtl',
     taskFormData:{
-      name: '老登！！！'
-    }
+      name: '巴巴托斯！！！'
+    },
+    title: "诶嘿~"
   }
 },
 methods:{
   hanleClickBtn(){
-    this.drawer = !this.drawer;
+    this.drawer = true
   },
+  handleClose(newVal){
+    this.drawer = newVal
+  }
 }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .btn {
+    cursor: pointer;
+  }
 </style>
