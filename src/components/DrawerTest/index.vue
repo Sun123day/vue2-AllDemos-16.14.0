@@ -6,7 +6,8 @@
       :direction="direction"
       @close="handleClose"
     >
-      <span>干点正事吧! {{ task.name }}</span>
+      <!-- <span>干点正事吧! {{ task.name }}</span> -->
+      <slot></slot>
     </el-drawer>
   </div>
 </template>
@@ -47,7 +48,7 @@ export default {
   methods: {
     handleClose() {
       this.internalDrawer = false
-    }
+    },
   }
 }
 </script>

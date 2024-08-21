@@ -12,6 +12,9 @@ Vue.use(ElementUI)
 import axios from 'axios'
 Vue.prototype.$http = axios
 
+//引入自定义全局组件
+import './plugins/customComponents'
+
 Vue.config.productionTip = false
 
 new Vue({

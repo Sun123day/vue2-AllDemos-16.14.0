@@ -25,9 +25,19 @@ const routes = [
     component: () => import('@/views/button01/index.vue')
   },
   {
+    path: '/yuan',
+    name: 'yuan',
+    component: () => import('@/views/YUAN/index.vue')
+  },
+  {
     path: '/drawer01',
     name: 'drawer01',
     component: () => import('@/views/drawer01/index.vue')
+  },
+  {
+    path: '/drawer02',
+    name: 'drawer02',
+    component: () => import('@/views/drawer02/index.vue')
   },
   {
     path: '/test01',
