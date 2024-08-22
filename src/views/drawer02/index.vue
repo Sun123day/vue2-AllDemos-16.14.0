@@ -20,6 +20,9 @@ methods:{
   hanleClickBtn(){
     new this.$drawerModal(
           DrawerModal,
+          {
+            
+          }
       )
   },
 }

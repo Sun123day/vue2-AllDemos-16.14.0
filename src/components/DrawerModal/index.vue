@@ -33,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-
+  
                     <div class="core-modal-footer">
                         <el-button
                             class="core-modal-footer-btn"
@@ -51,10 +51,10 @@
             </div>
         </transition>
     </div>
-</template>
-<script>
+  </template>
+  <script>
     import drag from '@/directive/drag'
-
+  
     let clickPosition
     document.addEventListener(
         'click',
@@ -75,7 +75,7 @@
         },
         true
     )
-
+  
     export default {
         name: 'page-modal',
         data() {
@@ -187,8 +187,8 @@
             draggable: drag.draggable,
         },
     }
-</script>
-<style lang="scss">
+  </script>
+  <style lang="scss">
     .core-modal-mask {
         position: fixed;
         top: 0;
@@ -199,7 +199,7 @@
         z-index: 1011;
         background-color: rgba(33, 33, 33, 0.6);
     }
-
+  
     .core-modal-wrap {
         position: fixed;
         overflow: auto;
@@ -219,7 +219,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
+  
             max-width: 1400px;
             min-width: 450px;
             width: 800px;
@@ -228,7 +228,7 @@
             color: #000 !important;
             background-color: #fff;
             transition: transform 0.8s cubic-bezier(0.36, 0.66, 0.04, 1);
-
+  
             display: flex;
             flex-flow: column nowrap;
             min-height: 70vh;
@@ -249,7 +249,7 @@
             & > div {
                 background-color: #fff;
             }
-
+  
             .core-modal-header {
                 height: 48px;
                 line-height: 1;
@@ -274,13 +274,13 @@
                     font-size: 14px;
                 }
             }
-
+  
             .core-modal-footer {
                 padding: 24px 24px 16px 24px;
                 text-align: right;
                 flex-grow: 0;
                 flex-shrink: 0;
-
+  
                 .core-modal-footer-btn {
                     margin-left: 8px;
                 }
@@ -309,19 +309,19 @@
             }
         }
     }
-
+  
     .ivu-btn-default,
     .ivu-btn-primary {
         margin-right: 8px;
         height: 32px;
     }
-
+  
     .ivu-btn-primary {
         color: #fff;
         background-color: #4573f5;
         border-color: #4573f5;
     }
-
+  
     ::v-deep .pa-select .el-input__inner {
         height: 32px;
         line-height: 32px;
@@ -356,4 +356,5 @@
             }
         }
     }
-</style>
+  </style>
+  
