@@ -109,6 +109,11 @@ const routes = [
     name: 'dynamicTime',
     component: () => import('@/views/dynamicTime/index.vue')
   },
+  {
+    path: '/jidu',
+    name: 'jidu',
+    component: () => import('@/views/jiduSeason/index.vue')
+  },
 ]
 
 const router = new VueRouter({
