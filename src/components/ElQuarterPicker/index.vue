@@ -303,7 +303,8 @@ export default {
       let text = pattern.replace('yyyy', '' + data[0])
       text = text.replace('qq', '0' + data[1])
       text = text.replace('q', '' + data[1])
-      text = text.replace('Q', '一二三四'.substr(data[1] - 1, 1))
+      // text = text.replace('Q', '一二三四'.substr(data[1] - 1, 1))
+      text = text.replace('Q', '一二三四'.substring(data[1] - 1, data[1]))
       return text
     },
     // 以指定格式解析季度
