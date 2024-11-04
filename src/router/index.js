@@ -114,6 +114,16 @@ const routes = [
     name: 'jidu',
     component: () => import('@/views/jiduSeason/index.vue')
   },
+  {
+    path: '/allBTN',
+    name: 'allBTN',
+    component: () => import('@/views/allBTN/index.vue')
+  },
+  {
+    path: '/tableXieXian',
+    name: 'tableXieXian',
+    component: () => import('@/views/tableXieXian/index.vue')
+  },
 ]
 
 const router = new VueRouter({

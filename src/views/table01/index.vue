@@ -22,6 +22,32 @@
         label="地址">
       </el-table-column>
     </el-table>
+    
+    <h1>测试tableXieXian中对复杂表头的影响</h1>
+    <h1>tableXieXian中添加scoped和::v-deep就只会单独生效</h1>
+    <el-table
+      :data="tableData"
+      style="width: 100%"
+      :cell-style="columnStyle"
+      >
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        label="信息">
+        <el-table-column
+          prop="name"
+          label="姓名"
+          width="180">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="地址">
+        </el-table-column>
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
