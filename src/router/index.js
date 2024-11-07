@@ -124,6 +124,11 @@ const routes = [
     name: 'tableXieXian',
     component: () => import('@/views/tableXieXian/index.vue')
   },
+  {
+    path: '/txtChangeColor',
+    name: '选中文字变色',
+    component: () => import('@/views/txtChangeColor/index.vue')
+  },
 ]
 
 const router = new VueRouter({
