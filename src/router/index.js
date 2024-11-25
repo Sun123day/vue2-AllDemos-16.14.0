@@ -129,6 +129,11 @@ const routes = [
     name: '选中文字变色',
     component: () => import('@/views/txtChangeColor/index.vue')
   },
+  {
+    path: '/echartsWaterBall',
+    name: 'echarts和水球',
+    component: () => import('@/views/echartsWaterBall/index.vue')
+  },
 ]
 
 const router = new VueRouter({
