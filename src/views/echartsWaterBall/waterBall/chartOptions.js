@@ -31,7 +31,7 @@ export function getPieChartOption(data) {
         waveAnimation: 10, // 动画时长
         amplitude: 20, // 波浪线的振幅
         data: [data[0].rate, data[0].rate],
-        color: '#42b9fc',//设置波形颜色
+        color: ['#2dd594', '#2dd594'],//设置波形颜色
         emphasis: {
           scale: false,
           label: {
@@ -50,7 +50,7 @@ export function getPieChartOption(data) {
           }
         },
         backgroundStyle: { //水球背景色
-          color: '#2dd594' //只通过了这处修改颜色
+          color: '#42b9fc' //只通过了这处修改颜色
         }
       },
     ]
