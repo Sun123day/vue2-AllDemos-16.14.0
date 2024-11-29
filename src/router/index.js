@@ -134,6 +134,11 @@ const routes = [
     name: 'echarts和水球',
     component: () => import('@/views/echartsWaterBall/index.vue')
   },
+  {
+    path: '/echartsRili',
+    name: 'echarts日历',
+    component: () => import('@/views/echartsRili/index.vue')
+  },
 ]
 
 const router = new VueRouter({
