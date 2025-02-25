@@ -1,40 +1,44 @@
 <template>
-  <div class="content">
-    <h1>echarts和日历结合</h1>
-    <div ref="pieEchartRes" style="width: 1000px; height: 600px"></div>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <div class="container">
+      <div ref="gaugeEchartRes" style="height: 500px; width: 500px;"></div>
+    </div>
   </div>
 </template>
 
 <script>
-import { getPieChartOption } from './chartOptions'
+import { getGaugeChartOption } from './chartOptions'
 import * as echarts from 'echarts'
 
 export default {
   // props: {
-  //   tableData: {
-  //     type: Array
+  //   power: {
+  //     type: Number,
+  //     default: 0
   //   }
   // },
   data() {
     return {
-      mycharts: null,
-      // tableData: [
-      //   {name: '甲烷', carbon: 500, rate: 50},
-      //   {name: '一氧化碳', carbon: 300, rate: 30},
-      //   {name: '设备寿命', carbon: 200, rate: 20},
-      // ]
+      // tableData:{ name: '实时发电功率', value:  this.$props.power || 0, unit: 'kW' },
+      tableData:{ name: '实时发电功率', value: 100, unit: 'kW' },
+      mycharts: null
     }
   },
   mounted() {
     this.initEcharts()
   },
   // watch: {
+  //   power: {
+  //     handler(newVal) {
+  //       this.tableData.value = newVal || 0
+  //     },
+  //   },
   //   tableData: {
   //     handler() {
   //       this.refreshChart()
   //     },
   //     deep: true
-  //   }
+  //   },
   // },
   beforeDestroy() {
     if (this.mycharts) {
@@ -44,7 +48,7 @@ export default {
   },
   methods: {
     initEcharts() {
-      this.mycharts = echarts.init(this.$refs.pieEchartRes)
+      this.mycharts = echarts.init(this.$refs.gaugeEchartRes)
       window.addEventListener('resize', this.autoResize)
       this.autoResize()
       this.refreshChart()
@@ -55,12 +59,10 @@ export default {
       }
     },
     refreshChart() {
-      // if (!this.mycharts || !this.tableData) {
-      if (!this.mycharts) {
+      if (!this.mycharts || !this.tableData) {
         return
       }
-      // const option = getPieChartOption(this.tableData)
-      const option = getPieChartOption()
+      const option = getGaugeChartOption(this.tableData)
       this.mycharts.setOption(option)
     },
     setHighLight(dataIndex = 0) {
@@ -73,10 +75,13 @@ export default {
   }
 }
 </script>
+
 <style lang="scss" scoped>
-.content {
+.container {
+  background-color: #001439;
+  width: 1200px;
+  height: 800px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }

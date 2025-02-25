@@ -139,6 +139,16 @@ const routes = [
     name: 'echarts日历',
     component: () => import('@/views/echartsRili/index.vue')
   },
+  {
+    path: '/echartsGauge',
+    name: 'echartsGauge仪表盘',
+    component: () => import('@/views/echartsGauge/index.vue')
+  },
+  {
+    path: '/selectChuansuokuang',
+    name: 'selectChuansuokuang穿梭框',
+    component: () => import('@/views/selectChuansuokuang/index.vue')
+  },
 ]
 
 const router = new VueRouter({
