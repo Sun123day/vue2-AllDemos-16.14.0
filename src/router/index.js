@@ -145,9 +145,19 @@ const routes = [
     component: () => import('@/views/echartsGauge/index.vue')
   },
   {
-    path: '/selectChuansuokuang',
-    name: 'selectChuansuokuang穿梭框',
-    component: () => import('@/views/selectChuansuokuang/index.vue')
+    path: '/selectJilian',
+    name: 'selectJilian级联选择器',
+    component: () => import('@/views/selectJilian/index.vue')
+  },
+  {
+    path: '/miyao',
+    name: 'miyao密钥',
+    component: () => import('@/views/miyao2048/index.vue')
+  },
+  {
+    path: '/jietuScreenShot',
+    name: 'jietuScreenShot网页截图',
+    component: () => import('@/views/jietuScreenShot/index.vue')
   },
 ]
 
