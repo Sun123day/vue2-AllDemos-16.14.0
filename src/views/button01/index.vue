@@ -15,9 +15,21 @@
         芝士内容
       </template>
     </Dialog>
+    <el-date-picker
+        v-model="timeRange"
+        format="yyyy-MM-dd HH:mm:ss"
+        value-format="yyyy-MM-dd HH:mm:ss"
+        type="datetimerange"
+        range-separator="至"
+        start-placeholder="开始日期"
+        end-placeholder="结束日期"
+        :editable="false"
+        :clearable="false"
+    />
   </div>
 </template>
 <script>
+import dayjs from 'dayjs'
 import Spebutton from '@/components/Spebutton'
 import FancyButton from '@/components/FancyButton'
 import Dialog from '@/components/Dialog'
@@ -28,7 +40,12 @@ export default {
     Dialog,
   },
    data(){
-      return{}
+      return{
+        timeRange: [
+          dayjs().format('YYYY-MM-DD 00:00:00'), 
+          dayjs().format('YYYY-MM-DD 23:59:59')
+        ]
+      }
    },
    methods:{},
 }

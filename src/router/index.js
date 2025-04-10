@@ -159,6 +159,11 @@ const routes = [
     name: 'jietuScreenShot网页截图',
     component: () => import('@/views/jietuScreenShot/index.vue')
   },
+  {
+    path: '/customChuanSuoKuang',
+    name: 'customChuanSuoKuang仿NaiveUI的自定义穿梭框',
+    component: () => import('@/views/customChuanSuoKuang/index.vue')
+  },
 ]
 
 const router = new VueRouter({
