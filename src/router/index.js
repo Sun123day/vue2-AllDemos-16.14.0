@@ -164,6 +164,11 @@ const routes = [
     name: 'customChuanSuoKuang仿NaiveUI的自定义穿梭框',
     component: () => import('@/views/customChuanSuoKuang/index.vue')
   },
+  {
+    path: '/LinkToQRcode',
+    name: 'LinkToQRcode根据链接生成二维码',
+    component: () => import('@/views/LinkToQRcode/index.vue')
+  },
 ]
 
 const router = new VueRouter({

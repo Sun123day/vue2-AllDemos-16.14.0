@@ -6,7 +6,7 @@
         <span class="column-title">未选标签</span>
         <div>
           <el-button v-if="this.selectedLeftOptions.length !== this.allOptions.length" size="mini" @click="selectAllLeft">全选</el-button>
-          <el-button v-else size="mini" @click="deselectAllLeft">全不选</el-button>
+          <el-button v-else size="mini" @click="deselectAllLeft">取消全选</el-button>
           共 {{ allOptions.length }} 项
         </div>
       </div>
@@ -22,7 +22,7 @@
       <div class="column-header">
         <span class="column-title">已选标签</span>
         <div>
-          <el-button size="mini" @click="clearRight">清除</el-button>
+          <el-button v-if="selectedRightOptions.length > 0" size="mini" @click="clearRight">清除</el-button>
           已选 {{ selectedRightOptions.length }} 项
         </div>
       </div>
@@ -120,7 +120,8 @@ export default {
         }
     .el-button--mini {
         padding: 2px;
-        margin: 0 4px 0 70px; 
+        // margin: 0 4px 0 70px; 
+        margin-left: 4px; 
     }
     .el-input--mini {
         margin: 8px 0;
