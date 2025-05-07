@@ -169,6 +169,11 @@ const routes = [
     name: 'LinkToQRcode根据链接生成二维码',
     component: () => import('@/views/LinkToQRcode/index.vue')
   },
+  {
+    path: '/rilibianhua',
+    name: 'rilibianhua生成变化的日历',
+    component: () => import('@/views/rilibianhua/index.vue')
+  },
 ]
 
 const router = new VueRouter({
