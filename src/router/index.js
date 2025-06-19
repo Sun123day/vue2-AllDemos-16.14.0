@@ -174,6 +174,16 @@ const routes = [
     name: 'rilibianhua生成变化的日历',
     component: () => import('@/views/rilibianhua/index.vue')
   },
+  {
+    path: '/zancun',
+    name: 'zancun暂存',
+    component: () => import('@/views/zancun/index.vue')
+  },
+  {
+    path: '/huoyueCard',
+    name: 'huoyueCard活跃卡片',
+    component: () => import('@/views/huoyueCard/index.vue')
+  },
 ]
 
 const router = new VueRouter({
