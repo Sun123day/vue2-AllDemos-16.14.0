@@ -184,6 +184,11 @@ const routes = [
     name: 'huoyueCard活跃卡片',
     component: () => import('@/views/huoyueCard/index.vue')
   },
+  {
+    path: '/js2vue2',
+    name: 'js2vue2颜色转换',
+    component: () => import('@/views/js2vue2/index.vue')
+  },
 ]
 
 const router = new VueRouter({
