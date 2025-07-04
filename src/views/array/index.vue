@@ -5,7 +5,7 @@
       <div>使用iframe直接引入文件中的.html文件</div>
       <h2>创造数组</h2>
       <!-- 不行呢，，， -->
-      <iframe src="./创造数组.html"
+      <iframe src="./JS数组常用方法技巧全解.html"
         frameborder="0"
         style="width: 100%; height: 100%;"
       />

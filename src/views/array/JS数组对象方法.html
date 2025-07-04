@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Array对象方法</h1>
+  <div>
+    <div>
+      <h2>concat()</h2>
+      <div>
+        array1.concat(<b><em>array2,array3,...,arrayX</em></b>)
+        <br>
+        必需。该参数可以是具体的值，也可以是数组对象。可以是任意多个。
+        <p>定义和用法：
+          用于连接两个或多个数组。
+          <br>
+          该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。
+        </p>
+        <p><b>quiz：</b>传递两个参数m，n，返回长度为m，所有元素都为n的数组，要求不能用循环。</p>
+        <p>
+          function fn(m, n) { <br>
+            return m ? fn(m - 1, n).concat(n) : []; <br>
+          } <br>
+        </p>
+        <p>例如：n=5, m=3，返回结果如下：
+          <span id="demo1">
+          </span>
+        </p>
+        <script>
+          const n1 = 5
+          const m1 = 3
+          document.getElementById('demo1').innerHTML = "[" + fn(m1, n1) + "]"
+          function fn(m, n) {
+            console.log(Boolean(m), m)
+            return m ? fn(m - 1, n).concat(n) : []
+          }
+        </script>
+      </div>
+
+      <h2>copyWithin()</h2>
+      <div>
+        array.copyWithin(<b><em>target, start, end</em></b>)
+        <br>
+        target：	必需。将元素复制到的索引位置
+        <br>
+        start：	可选。开始复制元素的索引位置（默认为 0）。
+        <br>
+        end：可选。停止从中复制元素的索引位置（默认为 array.length）。
+        <p>定义和用法：
+          将数组本身元素复制到数组本身中的另一个位置，覆盖现有值。
+          <br>
+          永远不会向数组添加更多项，但会覆盖原始数组。
+        </p>
+        <p>
+          例如：a1=[1,2,9,4,5]，a1.copyWithin(0,2)，输出：<span id="demo2"></span>
+        </p>
+        <script>
+          const a1=[1,2,9,4,5];
+          document.getElementById("demo2").innerHTML= "[" + a1.copyWithin(0,2) + "]";
+        </script>
+      </div>
+
+      <h2>entries()</h2>
+      <div>
+        array.entries()
+        <br>
+        <p>
+          定义和用法：返回带有键/值对的 Array Iterator 对象。
+          <br>
+          对于原始数组中的每一项，新的迭代对象将包含一个以索引为键，以项值为值的数组
+          <br>
+          不会更改原始数组。
+          <br>
+          Internet Explorer 不支持 ​entries()​ 方法。
+        </p>
+        <p>例如：
+          var fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+          var f = fruits.entries(); <br>
+          for (x of f) {  <br>
+            document.getElementById("demo").innerHTML += "[" + x + "]"; <br>
+          } <br>
+          输出结果：
+          <span id="demo3"></span>
+        </p>
+        <script>
+          var fruits = ["Banana", "Orange", "Apple", "Mango"];
+          var f = fruits.entries();
+          for (x of f) {
+            document.getElementById("demo3").innerHTML += "[" + x + "]";
+          }
+        </script>
+      </div>
+
+      <h2>every()待补充</h2>
+      <div>
+        array.every(<b><em>function(currentValue,index,arr), thisValue</em></b>)
+        <br>
+      </div>
+
+      <h2>fill()</h2>
+      <div>
+        array.fill(<b><em>value, start, end</em></b>)
+        <br>
+        value：	必需。用于填充数组的值。
+        <br>
+        start：	可选。开始填充数组的索引（默认为 0）。
+        <br>
+        end：	可选。停止填充数组的索引（默认为 array.length）。
+        <br>
+        <p>定义和用法：
+          用静态值填充数组中的指定元素。指定开始和结束填充的位置。如果未指定，则将填充所有元素。
+          <br>
+          会覆盖原始数组。Internet Explorer 不支持 ​fill()​ 方法。
+        </p>
+        <p>
+          例如：var fruits = ["Banana", "Orange", "Apple", "Mango"];
+          <br>
+          fruits.fill("Kiwi");
+          <br>
+          输出结果：<span id="demo5"></span>
+        </p>
+        <script>
+          var fruits = ["Banana", "Orange", "Apple", "Mango"];
+          document.getElementById("demo5").innerHTML = "[" + fruits.fill("Kiwi") + "]";
+        </script>
+      </div>
+
+      <h2>filter()待补充</h2>
+      <div>
+        array.filter(<b><em>function(currentValue,index,arr), thisValue</em></b>)
+        <br>
+
+      </div>
+
+      <h2>find()待补充</h2>
+      <div>
+        array.find(<b><em>function(currentValue, index, arr), thisValue</em></b>)
+        <br>
+      </div>
+
+      <h2>findIndex()待补充</h2>
+      <div>
+        array.findIndex(<b><em>function(currentValue, index, arr), thisValue</em></b>)
+        <br>
+      </div>
+
+      <h2>forEach()待补充</h2>
+      <div>
+        array.forEach(<b><em>function(currentValue, index, arr), thisValue</em></b>)
+        <br>
+      </div>
+
+      <h2>from()</h2>
+      <div>
+        Array.from(<b><em>object, mapFunction, thisValue</em></b>)
+        <br>
+        object：	必需。需转换为数组的对象。
+        <br>
+        mapFunction：	可选。对数组的每个项目调用的 map 函数。
+        <br>
+        thisValue：	可选。执行 mapFunction 时用作 this 的值。
+        <br>
+        <p>定义和用法：
+          从具有 length 属性或可迭代对象的任何对象返回 Array 对象。
+        </p>
+        <p>
+          例如：var myArr = Array.from("ABCDEFG");输出结果：
+          <span id="demo10"></span>
+        </p>
+        <script>
+          document.getElementById("demo10").innerHTML = "[" + Array.from("ABCDEFG") + "]";
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
