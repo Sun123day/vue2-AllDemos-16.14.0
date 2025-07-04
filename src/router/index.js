@@ -189,6 +189,11 @@ const routes = [
     name: 'js2vue2颜色转换',
     component: () => import('@/views/js2vue2/index.vue')
   },
+  {
+    path: '/array',
+    name: 'array数组内容',
+    component: () => import('@/views/array/index.vue')
+  },
 ]
 
 const router = new VueRouter({

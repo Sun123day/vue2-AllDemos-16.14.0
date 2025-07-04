@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h2>构造函数</h2>
+    <div>
+      <div>
+        1.无参构造函数，创建一空数组
+        <script>
+          console.log("构造函数")
+          var a1 = new Array();
+          console.log("a1：", a1);
+        </script>
+      </div>
+      <div>
+        2.一个数字参数构造函数，
+        指定数组长度（由于数组长度可以动态调整，作用并不大），
+        创建指定长度的数组
+        <script>
+          var a2 = new Array(5);
+          console.log("a2：", a2);
+        </script>
+      </div>
+      <div>
+        3.带有初始化数据的构造函数，创建数组并初始化参数数据
+        <script>
+          var a3=new Array(4,'hello',new Date());
+          console.log("a3：", a3);
+        </script>
+      </div>
+    </div>
+
+    <h2>字面量</h2>
+    <div>
+      <div>
+        1.使用方括号，创建空数组，等同于调用无参构造函数
+        <script>
+          console.log("字面量")
+          var a4=[];
+          console.log("a4：", a4);
+        </script>
+      </div>
+      <div>
+        2.使用中括号，并传入初始化数据，
+        等同于调用调用带有初始化数据的构造函数
+        <script>
+          var a5=[10];
+          console.log("a5：", a5);
+        </script>
+      </div>
+      <h3>注意点</h3>
+      <div>
+        1.在使用构造函数创建数组时如果传入一个数字参数，
+        则会创建一个长度为参数的数组，如果传入多个，
+        则创建一个数组，参数作为初始化数据加到数组中
+        <script>
+          console.log("字面量注意点")
+          var a1=new Array(5);
+          console.log("a1.length：", a1.length);//5
+          console.log("a1：", a1); //[] ,数组是空的
+
+          var a2=new Array(5,6);
+          console.log("a2.length：", a2.length);//2
+          console.log("a2：", a2); //[5,6]
+        </script>
+        <div>
+          但是使用字面量方式，无论传入几个参数，
+          都会把参数当作初始化内容
+          <script>
+            console.log("但是")
+            var a1=[5];
+            console.log("a1.length：", a1.length);//1
+            console.log("a1：", a1); //[5]
+
+            var a2=[5,6];
+            console.log("a2.length：", a2.length);//2
+            console.log("a2：", a2); //[5,6]
+          </script>
+        </div>
+      </div>
+      <div>
+        2.使用带初始化参数的方式创建数组的时候，
+        最好最后不要带多余的”,”，
+        在不同的浏览器下对此处理方式不一样
+        <script>
+          var a1=[1,2,3,];
+          console.log("a1.length：", a1.length);
+          console.log("a1：", a1);
+        </script>
+        <div>
+          这段脚本在现代浏览器上运行结果和我们设想一样，
+          长度是3，但是在低版本IE下却是长度为4的数组，
+          最后一条数据是undefined
+        </div>
+      </div>
+    </div>
+
+    <h2>数组的索引与长度</h2>
+    <div>
+      <div>
+        数组的值可以通过自然数索引访问进行读写操作，
+        下标也可以是一个得出非负整数的变量或表达式
+        <script>
+          console.log("数组的索引与长度");
+          var a1=[1,2,3,4];
+          console.log("a1[0]：", a1[0]); //1
+          var i=1;
+          console.log("a1[i]：", a1[i]); //2
+          console.log("a1[++i]：", a1[++i]); //3
+        </script>
+      </div>
+      <div>
+        数组也是对象，我们可以使用索引的奥秘在于，
+        数组会把索引值转换为对应字符串（1=>”1”）作为对象属性名
+        <script>
+          console.log("1 in a1：", 1 in a1);//true，确实是一个属性
+        </script>
+      </div>
+      <div>
+        索引特殊性在于数组会自动更新length属性，
+        当然因为JavaScript语法规定数字不能作为变量名，
+        所以我们不能显示使用array.1这样的格式。
+        由此可见其实负数，甚至非数字”索引“都是允许的，
+        只不过这些会变成数组的属性，而不是索引
+        <script>
+          var a=new Array(1,2,3);
+          console.log("a：", a);
+          a[-10]="a[-10]";
+          console.log("a[-10]：", a[-10]);
+          a["sss"]="sss";
+          console.log('a["sss"]：', a["sss"]);
+        </script>
+      </div>
+      <div>
+        这样我们可以看出所有的索引都是属性名，
+        但只有自然数（有最大值）才是索引，
+        一般我们在使用数组的时候不会出现数组越界错误也正是因为此，
+        数组的索引可以不是连续的，
+        访问index不存在的元素的时候返回undefined
+        <script>
+          var a=new Array(1,2,3);
+          a[100]=100;
+          console.log("a.length：", a.length); //101
+          console.log("a[3]：", a[3]); //undefined
+          console.log("a[99]：", a[99]); //undefined
+          console.log("a[100]：", a[100]); // 100
+        </script>
+      </div>
+      <div>
+        上面的例子中，虽然直接对a[100]赋值不会影响a[4]或a[99],
+        但数组的长度却受到影响，
+        数组length属性等于数组中最大的index+1，
+        我们知道数组的length属性同样是个可写的属性，
+        当强制把数组的length属性值设置为小于等于最大index值时，
+        数组会自动删除indexd大于等于length的数据，
+        在刚才代码中追加几句
+        <script>
+          a.length=2;
+          console.log("a：", a);//[1,2]
+
+        </script>
+      </div>
+      <div>
+        这时候会发现a[2]和a[100]被自动删除了，同理，
+        如果把length设置为大于最大index+1的值的时候，
+        数组也会自动扩张，但是不会为数组添加新元素，
+        只是在尾部追加空空间
+        <script>
+          a.length=5;
+          console.log("a：", a); //[1,2] //后面没有3个undefined或者显示“空属性×3”
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
