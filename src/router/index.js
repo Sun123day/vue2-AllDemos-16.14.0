@@ -194,6 +194,21 @@ const routes = [
     name: 'array数组内容',
     component: () => import('@/views/array/index.vue')
   },
+  {
+    path: '/xm',
+    name: 'xm',
+    component: () => import('@/views/xm/index.vue')
+  },
+  {
+    path: '/xm/comment',
+    name: 'xmComment',
+    component: () => import('@/views/xm/components/Comment/index.vue')
+  },
+  {
+    path: '/xm/overview',
+    name: 'xmOverview',
+    component: () => import('@/views/xm/components/Overview/index.vue')
+  },
 ]
 
 const router = new VueRouter({
