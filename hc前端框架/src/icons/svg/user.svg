@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1.通用/2.Icon图标/线性/用户</title>
+    <g id="智慧停车" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="账号登录" transform="translate(-968, -361)" fill="#B3BCC0" fill-rule="nonzero">
+            <g id="编组-6" transform="translate(860, 0)">
+                <g id="编组-43" transform="translate(100, 349)">
+                    <g id="1.通用/2.Icon图标/线性/用户" transform="translate(8, 12)">
+                        <rect id="Rectangle" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M8,2 C9.65685425,2 11,3.34314575 11,5 C11,6.65685425 9.65685425,8 8,8 C6.34314575,8 5,6.65685425 5,5 C5,3.34314575 6.34314575,2 8,2 Z M8,3 C6.8954305,3 6,3.8954305 6,5 C6,6.1045695 6.8954305,7 8,7 C9.1045695,7 10,6.1045695 10,5 C10,3.8954305 9.1045695,3 8,3 Z M11.9375,9 L4.0625,9 C2.9234127,9 2,9.9234127 2,11.0625 L2,13 C2,13.5522847 2.44771525,14 3,14 L13,14 C13.5522847,14 14,13.5522847 14,13 L14,11.0625 C14,9.9234127 13.0765873,9 11.9375,9 Z M11.9375,10 L11.9550704,10.0001423 C12.5337689,10.0095251 13,10.4815655 13,11.0625 L13,13 L3,13 L3,11.0625 C3,10.4756975 3.47569745,10 4.0625,10 L11.9375,10 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

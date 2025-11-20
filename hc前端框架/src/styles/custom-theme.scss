@@ -1,0 +1,63 @@
+//element组件主题色
+$--color-primary: $primary-color;
+$--color-text-primary:$menuText;
+$--color-text-regular: $menuText;
+
+//menu菜单字体颜色
+$--menu-item-font-color: $menuText;
+$--menu-background-color: $menuBg;
+
+//表格thead字体颜色
+$--table-font-color: $table-search-text-color !important;
+$--table-header-font-color: $table-search-text-color;
+//表格thead背景颜色
+$--table-header-background-color: $table-header-bg !important;
+
+$--table-row-hover-background-color: $menuActiveBgColor;
+
+$--table-border: none;
+
+$--pagination-font-color: $table-search-text-color;
+
+$--pagination-button-color: $table-search-text-color;
+$--pagination-background-color:$com-bg-color;
+
+/*********input输入组件************/
+$--input-background-color: $com-bg-color;
+$--input-border: $com-default-border;
+$--input-disabled-fill: $com-bg-color;
+$--input-disabled-border: $com-default-border-color;
+
+/*********button组件************/
+$--button-default-background-color: $com-bg-color;
+$--button-default-border-color: $com-default-border-color;
+$--button-disabled-background-color: $com-bg-color;
+/*********Select组件************/
+$--select-dropdown-background: $select-dropdown-bg-color;
+$--select-dropdown-border: $com-default-border;
+$--select-option-hover-background: $menuActiveText;
+$--select-option-selected-font-color:$modal-font-color;
+
+$--popover-background-color: $com-default-border;
+$--popover-border-color:$com-default-border-color;
+
+$--popover-background-color: $select-dropdown-bg-color;
+
+$--messagebox-title-color:$modal-font-color;
+
+$--datepicker-border-color:$com-default-border-color;
+$--datepicker-inner-border-color:$com-default-border-color;
+$--border-color-light:$com-default-border-color;
+
+$--checkbox-checked-background-color:$com-bg-color;
+$--checkbox-background-color:$com-bg-color;
+$--checkbox-disabled-input-fill:$checkbox-disable-bg;
+$--checkbox-disabled-border-color:$checkbox-disable-border-color;
+
+$--tree-node-hover-background-color:$com-bg-color;
+$--tree-node-hover-background-color:$nav-bar-bg-color;
+$--tree-node-hover-background-color:$primary-color;
+
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import '~element-ui/packages/theme-chalk/src/index.scss';

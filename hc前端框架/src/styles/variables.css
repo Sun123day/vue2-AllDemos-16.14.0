@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/*****sidebar导航菜单****/
+:export {
+  menuText: #fff;
+  menuActiveText: #2b8eff;
+  sideBarWidth: 200px;
+}

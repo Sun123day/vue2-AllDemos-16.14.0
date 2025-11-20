@@ -1,0 +1,182 @@
+<!-- 设备AI -->
+<template>
+  <div class="rightDown">
+      <div class="image">
+        <img src="../../image/Group 575@2x.png" alt="">
+      </div>
+      <div class="info">
+          <p v-for="(item, index) in  infoCount" :key='index'>
+            {{ item.name }} ：
+            <span style="color: #00FFFF">{{ item.value || 0 }}</span>
+            <span style="color:#ffffffa8 ;font-size: 14px;font-weight: 400;">
+              {{ item.unit }}
+            </span>
+          </p>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <div class="down_o">
+            <p v-for="(item, index) in  logList" :key='index' style="margin-bottom: 8px;">
+                {{item.datetime}}：{{item.verbose}}
+            </p>
+        </div>
+      </div>
+  </div>
+</template>
+
+<script>
+import store from '@/store'
+import { mapState } from "vuex";
+import dayjs from 'dayjs'
+export default {
+  components: {
+  },
+  props: {
+  },
+  data() {
+      return {
+          timer: null,
+          resData:{}
+      }
+  },
+  created() {
+      this.requestData()
+      
+      this.unwatch=this.$watch(()=>this.aiDeviceStatusData,
+      (newValue={})=>{
+          this.resData=newValue
+        //   console.log("newValue", newValue)
+      })
+  },
+  computed: {
+      ...mapState({
+          aiDeviceStatusData: (state) => state.cockpit.aiDeviceStatusData
+      }),
+      infoCount(){
+          let list = [
+              { name: this.$store.state.language == 'zh' ? '今日问答' : '今日問答', value: 0, unit: '次' },
+              { name: this.$store.state.language == 'zh' ? '累计问答' : '累計問答', value: 0, unit: '次' },
+              { name: this.$store.state.language == 'zh' ? '知识文档' : '知識文檔', value: 0, unit: '篇' },
+              { name: this.$store.state.language == 'zh' ? '累计工单' : '累計工單', value: 0, unit: this.$store.state.language == 'zh' ? '个' : '個' },
+          ]
+          
+          if(this.resData){
+              const today_messages = this.resData.today_messages
+              const total_messages = this.resData.total_messages
+              const total_file = this.resData.total_file
+              const total_tickets = this.resData.total_tickets
+              list[0].value = today_messages
+              list[1].value = total_messages
+              list[2].value = total_file
+              list[3].value = total_tickets
+          }
+          return list
+      },
+      logList(){
+          if(this.resData && this.resData.logs && this.resData.logs.length !== 0) {
+              this.resData.logs.forEach(item => {
+                  item.datetime = dayjs(item.datetime).format('YYYY-MM-DD HH:mm:ss')
+              })
+            //   return this.resData.logs
+              // 只取前四条
+              return this.resData.logs.slice(0, 4)
+          }
+          else if((this.resData && this.resData.logs && this.resData.logs.length === 0) || (this.resData && !this.resData.logs)) {
+              return [
+                  { datetime: dayjs().format('YYYY-MM-DD'), verbose: this.$store.state.language == 'zh' ? '暂无数据' : '暫無數據' },
+              ] 
+          }
+          else {
+              return [
+                  { datetime: dayjs().format('YYYY-MM-DD'), verbose: this.$store.state.language == 'zh' ? '暂无数据' : '暫無數據' },
+              ]
+          }
+      }
+  },
+  watch: {
+
+  },
+  mounted() {
+      // 每分钟请求一次数据
+      this.timer = setInterval(() => {
+          this.requestData()
+      }, 5 * 60000)
+  },
+  beforeDestroy() {
+      // 组件销毁前清除定时器
+      clearInterval(this.timer);
+  },
+  methods: {
+      requestData() {
+        //   console.log("re")
+          store.dispatch('cockpit/DEVICE_AI_STATUS_ACTION', {
+
+          }) 
+      }
+  },
+}
+</script>
+
+<style scoped lang="scss">
+.rightDown {
+  .image {
+    display: flex;
+    justify-content: center;
+    img {
+        margin: 16px 0 24px;
+        height: 85px;
+    }
+  }
+
+  .info {
+      p {
+          width: 50%;
+          font-family: PingFang SC, PingFang SC;
+          font-weight: bold;
+          font-size: 15px;
+          color: #FFFFFF;
+          line-height: 22px;
+          text-align: left;
+          font-style: normal;
+          text-transform: none;
+          text-align: center;
+          margin-bottom: 10px;
+      }
+
+      p:nth-child(2),
+      p:nth-child(4) {
+          text-indent: 30px;
+          text-align: left;
+      }
+
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+
+      span {}
+  }
+
+  .down_o {
+      padding: 16px;
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 400;
+      font-size: 12px;
+      color: #00FFFF;
+      line-height: 17px;
+      text-align: left;
+      font-style: normal;
+      text-transform: none;
+      letter-spacing: 2px;
+      width: 461px;
+      height: 160px;
+      border-radius: 0px;
+      /* 0px 0px 0px 0px 可以简化为 0px */
+      border-width: 1px;
+      /* 显式设置边框宽度 */
+      border-style: solid;
+      /* 边框样式 */
+      /* 使用 border-image 创建渐变边框 */
+      border-image: linear-gradient(270deg, #157CFF, #011639, #011639, #053B80) 1;
+  }
+}
+</style>

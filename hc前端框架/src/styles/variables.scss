@@ -1,0 +1,63 @@
+//主题色
+$primary-color: #2b8eff;
+//页面背景颜色
+$page-bg-color: #001c4a;
+//页面头部导航高度
+$header-height: 48px;
+$header-bg-color: $primary-color;
+
+//页面路径bar背景颜色
+$nav-bar-bg-color: rgba(38, 86, 157, 0.3);
+// $nav-bar-margin-top: 8px;
+$nav-bar-margin-top: 0;
+$nav-bar-text-color: #fff;
+
+//rltable组件查询背景颜色
+$table-search-bg-color: rgba(38, 86, 157, 0.3);
+$table-search-text-color: #fff;
+$table-bg: transparent;
+$table-header-bg: #003e86;
+$table-defalut-tr-bg: #002458;
+$table-striped-bg: #002c64;
+$table-before-line-color: #00356e;
+// $table-before-line-color: #fff;
+$table-pagination-total-color: #fff;
+$table-card-bg-color: #0c316a;
+
+/*****sidebar导航菜单****/
+//导航菜单背景颜色
+$menuBg: #00367f;
+
+//导航菜单颜色
+$menuText: #fff;
+
+//导航菜单选中的颜色
+$menuActiveText: $primary-color;
+//导航菜单active和hover的背景颜色
+$menuActiveBgColor: rgba(43, 124, 255, 0.24);
+//导航菜单的宽度
+$sideBarWidth: 200px;
+
+//弹窗
+$modal-bg-color: #04214e;
+$modal-header-bg-color: #22457a;
+$modal-font-color: #fff;
+
+//组件的boder
+$com-default-border: 1px solid #709cd5;
+$com-default-border-color: #709cd5;
+$com-bg-color: transparent;
+
+$select-dropdown-bg-color: #0c316b;
+
+//容器组件boder
+$group-box-border: 1px solid rgba(0, 144, 242, 0.58);
+$group-box-item-bg: linear-gradient(180deg, #032658 0%, #022568 100%);
+$checkbox-disable-bg: #0c2a58;
+$checkbox-disable-border-color: #1c355d;
+
+:export {
+    menuText: $menuText;
+    menuActiveText: $menuActiveText;
+    sideBarWidth: $sideBarWidth;
+}
