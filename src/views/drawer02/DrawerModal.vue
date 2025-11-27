@@ -14,6 +14,13 @@ export default {
       this.$emit('SetTitle', '编辑');
       this.$emit('SetPageActions', [
         {
+          text: '确认',
+          theme: 'primary',
+          handle: () => {
+            this.$emit('Close');
+          },
+        },
+        {
           text: '取消',
           theme: 'default',
           handle: () => {
